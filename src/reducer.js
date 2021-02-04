@@ -1,8 +1,10 @@
+import * as actions from "./actionTypes";
+
 let lastId = 0;
 
 export default function reducer(state = [], action) {
   switch (action.type) {
-    case "bugAdded":
+    case actions.BUG_ADDED:
       return [
         ...state,
         {
@@ -11,8 +13,12 @@ export default function reducer(state = [], action) {
           resolve: false,
         },
       ];
-    case "removeBug":
+    case actions.REMOVED_BUG:
       return state.filter((bug) => bug.id !== action.payload.id);
+    case actions.BUG_RESOLVED:
+      return state.map((bug) =>
+        bug.id !== action.payload.id ? bug : { ...bug, resolve: true }
+      );
     default:
       return state;
   }
