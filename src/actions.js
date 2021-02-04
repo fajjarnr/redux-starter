@@ -14,12 +14,12 @@ export const bugResolved = (id) => ({
   },
 });
 
-// export const removeBug = (id) => ({
-//   type: actions.REMOVED_BUG,
-//   payload: {
-//     id,
-//   },
-// });
+export const removeBug = (id) => ({
+  type: actions.REMOVED_BUG,
+  payload: {
+    id,
+  },
+});
 
 // export function bugAdded(description) {
 //   return {
