@@ -10,6 +10,6 @@ store.dispatch(bugResolved(1));
 
 // unsubscribe();
 
-store.dispatch(removeBug(1));
+// store.dispatch(removeBug(1));
 
 console.log(store.getState());
